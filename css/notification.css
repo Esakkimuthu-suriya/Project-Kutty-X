@@ -1,0 +1,117 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+    height: 100%;
+    overflow-y:visible;
+    overflow-wrap:normal;
+}
+.header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e;
+    justify-content:space-between;
+    padding: 1% 2%;
+    border-bottom: 0.5px solid #9f9f9f;
+}
+.headerLeft{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.headerRight{
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 10px;
+}
+.logo{
+    display: flex;
+    width:60px;
+    align-items:center;
+}
+.headerMiddle{
+    width:50%;
+}
+.search{
+    align-items: center;
+    border-radius: 5px;
+    padding:10px;
+    background-color:transparent;
+    color: white;
+    width:100%;
+    border: none;
+    outline: none;
+}
+.search:hover{
+    border: 1px solid white;
+}
+.profile{
+    width: 35px;
+    border-radius:35px;
+}
+.NotificationBox{
+    margin-top: 20px;
+    width:50%;
+    height:100vh;
+    border-radius: 10px;
+    padding: 10px 30px;
+    display: grid;
+    row-gap: 20px;
+}
+
+.NotificationCard{
+    /* padding:20px; */
+    border: 1px solid #9f9f9f;
+    border-radius: 10px;
+}
+.NotificationCard:hover{
+    background-color:#8786865f;
+}
+.NotificationCardTop{
+    display: flex;
+    border-bottom: 1px solid #9f9f9f;
+}
+.NotificationCardBottom{
+    padding-left:10px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+.userImg{
+    padding: 10px;
+    width: 35px;
+    border-radius: 35px;
+}
+.Kutty{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+.foot{
+    background-color: #1e1e1e;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+}
+ul,a,li{
+    display:flex;
+    justify-content:space-around;
+    text-decoration: none;
+    list-style:none;
+    color:cadetblue;
+}
+input[type="file"] {
+    display: none;
+}
+.inputFile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

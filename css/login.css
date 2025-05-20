@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0%, 44%);
+}
+.loginPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 23%;
+    height:57vh;
+    border: 1px solid #9f9f9f;
+}
+.loginTop{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.loginTop h2{
+    padding-left: 5px;
+}
+.loginPage img{
+    width: 50px;
+    border-radius: 50px;
+}
+.loginBox{
+    width: 100%;
+    padding: 10px;
+}
+.loginBottom{
+    margin-top:5px;
+    display: grid;
+    row-gap:10px;
+}
+.loginBottom label{
+    padding-left: 10px;
+}
+.loginBottom input{
+    border: none;
+    padding: 10px 10px;
+    outline:  none;
+    margin:2px 2px;
+    background-color: #9f9f9f2b;
+    color: white;
+    border-radius: 20px;
+}
+.loginBottom input:hover{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0.5px solid #9f9f9f;
+}
+.loginButton button{
+    width: 100%;
+    font-size:20px;
+    margin-top:20px;
+    border-radius: 20px;
+    border: none;
+    padding: 6px 6px;
+    background-color: dodgerblue;
+    color: white;
+    outline:none;
+}
+.loginButton button:hover{
+    background-color: rgba(152, 150, 150, 0.486);
+    cursor: pointer;
+}
+.backResigter{
+    display:flex;
+    align-items: center;
+}
+.register{
+    padding: 10px 10px;
+    text-decoration:none;
+    color: rgba(83, 83, 165, 0.865);
+}
+.backResigter p{
+    font-size:15px;
+}

@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding-bottom: 100%;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    padding: 1% 2%;
+    border-bottom: 0.5px solid #9f9f9f;
+}
+
+.Kutty {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+
+.headerLeft {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.headerRight {
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.logo {
+    display: flex;
+    width: 60px;
+    align-items: center;
+}
+
+.headerMiddle {
+    width: 50%;
+}
+
+.search {
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.search:hover {
+    border: 1px solid white;
+}
+
+.profile {
+    width: 35px;
+    border-radius: 35px;
+}
+
+/* profile */
+
+.kuttyProfile {
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.profileMenu i {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.akash {
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.profileCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.profileCardRight,
+.profileCardLeft {
+    flex: 1 1 100%;
+}
+
+.profileImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dpImage {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.profileItemsTop,
+.profileItemsBottom {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (min-width: 600px) {
+    .profileCard {
+        flex-wrap: nowrap;
+    }
+
+    .profileCardRight {
+        flex: 1;
+    }
+
+    .profileCardLeft {
+        flex: 2;
+    }
+
+    .profileItemsTop h1,
+    .profileItemsBottom h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .kuttyProfile {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .profileCard {
+        padding: 10px;
+    }
+
+    .dpImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .akash {
+        font-size: 20px;
+    }
+
+    .profileItemsTop h1,
+    .profileItemsBottom h2 {
+        font-size: 14px;
+    }
+
+    .profileItemsTop,
+    .profileItemsBottom {
+        gap: 8px;
+    }
+}
+
+
+/**/
+.foot {
+    background-color: #1e1e1e;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.foot ul{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100% !important;
+    column-gap: 30px;
+    padding: 0;
+    padding-top: 10px;
+}
+
+
+ul,
+a,
+li {
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style: none;
+    color: cadetblue;
+}
+
+
+
+.container{
+    display: flex !important;
+}
+
+
+
+/* bio*/
+
+.bio{
+    margin-top:40px;
+    padding-left:74px;
+}

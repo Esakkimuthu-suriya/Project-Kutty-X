@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="/css/foot.css">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="headerLeft">
+            <img class="logo" src="./img/logo.jpg" alt="logo">
+            <a class="Kutty" href="index.html">Kutty X</a>
+        </div>
+        <div class="headerMiddle">
+            <input class="search" type="search" placeholder="search">
+        </div>
+        <div class="headerRight">
+            <b id="userName">User Name</b>
+           <a href="profile.html"><img class="profile" src="./img/boy.jpg" alt="userprofile"></a>
+        </div>
+    </div>
+    <style>
+        .comment-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100%;
+            background-color: #1e1e1e;
+            color: white;
+            transition: right 0.3s ease-in-out;
+            z-index: 9999;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .comment-drawer.show {
+            right: 0;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comment-body {
+            margin-top: 1rem;
+        }
+
+        /* Only visible on ≤425px */
+        @media (max-width: 425px) {
+            .comment-drawer {
+                display: block;
+            }
+        }
+
+        .commentTop {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 5px;
+            font-size: 12px;
+        }
+
+        .akash {
+            font-size: 13px;
+        }
+
+        .cap {
+            font-size: 11px;
+        }
+
+        .caps {
+            font-size: 13px;
+        }
+    </style>
+    <section id="postCards">
+        <div class="postCard">
+            <div class="postCardContainer">
+                <!-- Dynamically loaded from JS -->
+            </div>
+            <!-- COMMENT DRAWER (Appears on small screens when chat icon is clicked) -->
+            <div id="commentDrawer" class="comment-drawer">
+                <div class="comment-header">
+                    <h5>Comments</h5>
+                    <i id="closeDrawerBtn" class="bi bi-x-square-fill"></i>
+                </div>
+                <div id="commentBody" class="comment-body">
+                    <!-- Your comments will be injected here -->
+                </div>
+            </div>
+
+            <div class="indexPageRightSide">
+                <div class="comm">
+                    <div class="commentBox">
+                        <div class="commentBoxHeader">
+                            <h3>KuttyTalk</h3>
+                        </div>
+                        <!-- <div class="comment">
+                            <div class="commentTop">
+                                <div class="commentTopLeft">
+                                    <img class="commentImg" src="./img/boy.jpg" alt="userprofile">
+                                    <h5>Suriya</h5>
+                                </div>
+                                <p>2d</p>
+                            </div>
+                            <div class="commentBottom">
+                                <p>Your look very nice</p>
+                                <i class="bi bi-heart"></i>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="commentTypeBox">
+                    <div class="commentType">
+                        <textarea name="" id="txt_comment"></textarea>
+                    </div>
+                    <div class="commentButton">
+                        <div class="commentBottomLeft">
+                            <i class="bi bi-emoji-smile"></i>
+                        </div>
+                        <div class="commentBottomRight">
+                            <button id="btn_share_cmt">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="foot">
+        <ul>
+            <li><a href="index.html">KuttyFeed</a></li>
+            <li><a href="./following.html">KuttyKootam</a></li>
+            <li><a href="notification.html">KuttyWhistle</a></li>
+            <li><a href="./message.html">KuttyTalks</a></li>
+            <li><a href="/post.html">KuttyDrop</a></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/Mcube-Infotech/Mcube-Tags/dist/mcube-tags.es.js"></script>
+    <script src="./js/db.js"></script>
+    <script src="./js/index.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const postContainer = document.querySelector(".postCardContainer");
+            const drawer = document.getElementById("commentDrawer");
+            const drawerBody = document.getElementById("commentBody");
+            const closeDrawerBtn = document.getElementById("closeDrawerBtn");
+
+            postContainer.addEventListener("click", (e) => {
+                if (e.target.classList.contains("bi-chat")) {
+                    const postEl = e.target.closest(".post");
+                    const postId = postEl.dataset.postId;
+
+                    const db = JSON.parse(localStorage.getItem("kuttyx_db"));
+                    const post = db.posts.find(p => p.id == postId);
+
+                    drawerBody.innerHTML = ""; // Clear old
+
+                    if (!post.comments || post.comments.length === 0) {
+                        drawerBody.innerHTML = "<p>No comments yet.</p>";
+                    } else {
+                        post.comments.forEach(comment => {
+                            const div = document.createElement("div");
+                            div.className = "comment mb-3 p-2 rounded bg-dark text-white border";
+                            div.innerHTML = `
+            <div class="commentTop d-flex justify-content-between align-items-center mb-1">
+              <div class="commentTopLeft d-flex align-items-center gap-2">
+                <img class="commentImg" src="./img/boy.jpg" width="30" height="30" style="border-radius:50%">
+                <h5 class="akash mb-0">${comment.user || 'Unknown'}</h5>
+              </div>
+              <p class="cap mb-0" style="font-size: 12px;">${getTimeAgo(comment.time)}</p>
+            </div>
+            <div class="commentBottom">
+              <p class="caps mb-0">${comment.text}</p>
+            </div>`;
+                            drawerBody.appendChild(div);
+                        });
+                    }
+
+                    if (window.innerWidth <= 425) {
+                        drawer.classList.add("show");
+                    }
+                }
+            });
+
+            closeDrawerBtn.addEventListener("click", () => {
+                drawer.classList.remove("show");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

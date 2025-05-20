@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color:black;
+    color: white;
+    padding-bottom: 20%;
+}
+.postCard{
+    display: flex;
+    column-gap: 20px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #1e1e1e;
+    padding: 1% 2%;
+    border-bottom: 0.5px solid #9f9f9f;
+}
+.Kutty{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+.headerLeft{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.headerRight{
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 10px;
+}
+.logo{
+    display: flex;
+    width:60px;
+    align-items:center;
+}
+.headerMiddle{
+    width:50%;
+}
+.search{
+    align-items: center;
+    border-radius: 5px;
+    padding:10px;
+    background-color:transparent;
+    color: white;
+    width:100%;
+    border: none;
+    outline: none;
+}
+.search:hover{
+    border: 1px solid white;
+}
+.profile{
+    width: 35px;
+    border-radius:35px;
+}
+
+#postCards{
+    padding: 0 2%;
+}
+
+.postCard{
+    align-content: center;
+    margin-top:20px;
+    width:100%;
+}
+.postImg div{
+    display: flex;
+    column-gap: 40px;
+    margin-top: 10px;
+}
+.userName{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    column-gap: 20px;
+    align-items: center;
+}
+b{
+    align-items: center;
+}
+.userImg{
+    width: 40px;
+    border-radius:40px;
+}
+.userPost{
+    width: 100%;
+    border-radius: 5px;
+}
+.caption{
+    margin-top:20px;
+    width: 100%;
+}
+
+.caption p{
+    width: 100%;
+}
+
+.foot{
+    background-color: #1e1e1e;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+}
+ul,a,li{
+    display:flex;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style:none;
+    color:cadetblue;
+    padding:5px;
+}
+input[type="file"] {
+    display: none;
+}
+.inputFile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post{
+    background-color: #1e1e1e;
+    border: 0.5px solid #9f9f9f;
+    border-radius: 5px;
+    width: 50%;
+    padding: 10px 20px;
+}
+.commentBox{
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    height: 60vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.comment{
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.commentTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.commentTopLeft{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.commentBottom{
+    display: flex;
+    margin-top: 10px;
+    justify-content:space-between;
+}
+
+.commentBottom p{
+    font-size: 14px;
+}
+
+.commentImg{
+    width:25px;
+    border-radius: 25px;
+}
+.commentTopRight p{
+    font-size:10px;
+}

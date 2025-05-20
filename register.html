@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/resigter.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="signPage">
+        <div class="signBox">
+            <div class="signTop">
+                <img class="userPost" src="./img/logo.jpg" alt="logo">
+                <h2>Kutty x</h2>
+            </div>
+            <form id="registerForm" class="signBottom">
+                <label for="txtUser">Username</label>
+                <input type="text" name="username" id="txtUser" required>
+                <label for="txtEmail">Email</label>
+                <input type="email" name="email" id="txtEmail" required>
+                <label for="txtPhone">Number</label>
+                <input type="number" name="phone" id="txtPhone">
+                <label for="txtPassword">Password</label>
+                <input type="password" name="password" id="txtPassword" required>
+                <div class="signButton">
+                    <button type="submit">Register</button>
+                </div>
+                <div class="backLogin">
+                    <p>SignUp</p>
+                    <a class="login" href="login.html">Already have an account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/db.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

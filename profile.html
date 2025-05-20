@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Document</title>
+
+    <style>
+        .img-fluid {
+            width: 100%;
+        }
+
+        .profile-post-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .profile-post-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .profile-post-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .hover-overlay {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-post-card:hover .img-fluid {
+            opacity: 0.5;
+        }
+
+        .profile-post-card:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .hover-overlay i {
+            font-size: 1.2rem;
+        }
+
+
+        
+
+        #profilePostsContainer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+            flex: 1 0 25%;
+        }
+
+        #profilePostsContainer .singlePost {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="headerLeft">
+            <img class="logo" src="./img/logo.jpg" alt="logo">
+            <a class="Kutty" href="index.html">Kutty X</a>
+        </div>
+        <div class="headerMiddle">
+            <input class="search" type="search" placeholder="search">
+        </div>
+        <div class="headerRight">
+            <b class="akash" id="userName">User Name</b>
+            <a href="profile.html"><img class="profile" src="./img/boy.jpg" alt="userprofile"></a>
+        </div>
+    </div>
+    <!-- HTML -->
+    <div class="heades">
+        <div class="head">
+            <h2 class="kuttyProfile">KuttyZone</h2>
+            <div class="profileMenu">
+                <i class="bi bi-three-dots-vertical" id="profileMenuBtn" data-bs-toggle="modal"
+                    data-bs-target="#editProfileModal"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="profileCard">
+        <div class="profileCardRight">
+            <div class="profileImage">
+                <img class="dpImage" src="/img/boy.jpg" alt="profileimage">
+                <h1 class="akash" id="usernameDisplay">Akash</h1>
+                <!-- Inside .profileImage (below usernameDisplay) -->
+                <!-- <p id="userBio" class="bio">This is my awesome bio! ✨</p> -->
+            </div>
+        </div>
+        <div class="profileCardLeft">
+            <div class="profileItemsTop">
+                <h1>KuttyDrop</h1>
+                <h1>XFollowers</h1>
+                <h1>Kutty Kootam</h1>
+            </div>
+            <div class="profileItemsBottom">
+                <h2 id="postCount">0</h2>
+                <h2 id="followerCount">10</h2>
+                <h2 id="followingCount">10</h2>
+            </div>
+            <p id="userBio" class="bio">This is my awesome bio! ✨</p>
+        </div>
+
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: black; border-radius: 5px solid white;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="editUsername" style="color:white;">New Username:</label>
+                    <input type="text" id="editUsername" class="form-control" placeholder="Enter new name">
+
+                    <!-- Add this below the username input inside .modal-body -->
+                    <label for="editBio" style="color:white; margin-top: 10px;">Bio:</label>
+                    <textarea id="editBio" class="form-control" rows="3" placeholder="Enter your bio"></textarea>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="saveUsername" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3" id="profilePostsContainer">
+        <!-- Posts will be loaded here -->
+    </div>
+
+    <div class="foot">
+        <ul>
+            <li><a href="index.html">KuttyFeed</a></li>
+            <li><a href="./following.html">KuttyKootam</a></li>
+            <li><a href="notification.html">KuttyWhistle</a></li>
+            <li><a href="./message.html">KuttyTalks</a></li>
+            <li><a href="/post.html">KuttyDrop</a></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/db.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+
+</html>

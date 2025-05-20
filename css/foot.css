@@ -1,0 +1,43 @@
+ @media(max-width: 768px){
+    .foot{
+        width: 100% !important;
+    }
+}
+@media(max-width: 425px){
+    ul{
+        width: 100%!important;
+    }
+    /* li{
+        font-size: 20px;
+        width:50px !important;
+        display: flex;
+        justify-content: space-evenly;
+        column-gap: 20px;
+    } */
+    a{
+        font-size: 15px;
+    }
+}
+@media(max-width: 660px){
+    #postCards{
+        width:100%;
+    }
+    .post {
+        width:100%;
+    }
+    .indexPageRightSide{
+        width: 50%;
+    }
+    .comment{
+        width:100%;
+    }
+    .commentBottom{
+        width:50% auto;
+    }
+    .commentTopLeft{
+        width: 50%;
+    }
+    .bibi-heart{
+        width: 50%;
+    }
+} 

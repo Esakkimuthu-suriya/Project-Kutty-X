@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color:black;
+    color: white;
+    padding-bottom: 20%;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #1e1e1e;
+    padding: 1% 2%;
+    border-bottom: 0.5px solid #9f9f9f;
+}
+.Kutty{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+.headerLeft{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.headerRight{
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 10px;
+}
+.logo{
+    display: flex;
+    width:60px;
+    align-items:center;
+}
+.headerMiddle{
+    width:50%;
+}
+.search{
+    align-items: center;
+    border-radius: 5px;
+    padding:10px;
+    background-color:transparent;
+    color: white;
+    width:100%;
+    border: none;
+    outline: none;
+}
+.search:hover{
+    border: 1px solid white;
+}
+.profile{
+    width: 35px;
+    border-radius:35px;
+}
+.createPostCard{
+    display: flex;
+    margin-top: 15px;
+    padding-left: 18px;
+    align-items: start;
+}
+.createPostBox{
+    width: 50%;
+    height: 80vh;
+    background-color: #1e1e1e;
+    border-radius:20px;
+    border: 1px solid #9f9f9f;
+}
+.createPost i{
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(210%);
+    color: white;
+}
+.createPost .inputFile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.postCaption{
+    width:50%;
+    padding: 0 10px;
+}
+.postCaptionTop textarea{
+    width: -webkit-fill-available;
+    height:50vh;
+    background-color: transparent;
+    color: white;
+    border-radius:10px;
+    padding: 10px;
+}
+.postCaptionBottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.postCaptionBottomRight button{
+    background-color: dodgerblue;
+    border: 1px solid #9f9f9f;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    padding: 4px 12px;
+}
+.foot{
+    background-color: #1e1e1e;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+}
+ul,a,li{
+    display:flex;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style:none;
+    color:cadetblue;
+    padding:5px;
+}
+input[type="file"] {
+    display: none;
+}
+.inputFile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
