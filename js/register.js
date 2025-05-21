@@ -32,6 +32,6 @@ form.addEventListener('submit', (e)=>{
     localStorage.setItem("current_user", JSON.stringify(registerData))
 
     alert("User Registered and Login Successful 🎉")
-    location.href = "/index.html"
+    location.href = "index.html"
     console.log(registerData)
 })

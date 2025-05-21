@@ -96,7 +96,7 @@ shareButton.addEventListener("click", () => {
         saveDB(kuttyx_db)
 
         alert("Post Created Successful 🎉")
-        location.href = "/index.html"
+        location.href = "index.html"
       };
 
       reader.readAsDataURL(file);
@@ -119,7 +119,7 @@ shareButton.addEventListener("click", () => {
       localStorage.setItem("kuttyx_db", JSON.stringify(db));
 
       alert("Post updated successfully 🎉");
-      location.href = "/index.html";
+      location.href = "index.html";
     }
   }
 });
