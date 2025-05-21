@@ -88,3 +88,17 @@ body{
 .backResigter p{
     font-size:15px;
 }
+
+
+
+@media(min-width: 768px){
+    .loginPage{
+        width:40%;
+    }
+}
+@media(max-width: 426px){
+    .loginPage{
+        width:70% !important;
+        height:1%;
+    }
+}

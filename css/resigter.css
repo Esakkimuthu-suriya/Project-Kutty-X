@@ -89,3 +89,18 @@ body{
 .backLogin p{
     font-size:15px;
 }
+
+
+
+
+@media(min-width: 768px){
+    .signPage{
+        width:40%;
+    }
+}
+@media(max-width: 426px){
+    .signPage{
+        width:70% !important;
+        height:1%;
+    }
+}
